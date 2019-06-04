@@ -1,19 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
+<head lang="en">
     <meta charset="UTF-8">
     <title>一个傻子的追梦Space</title>
     <style>
-        .links{
-            background-color: rebeccapurple;
-            width: 200px;
-            height: 80px;
-            margin-left: 100px;
+        *{
+            margin: 0;
+            padding: 0;
         }
-    </style>
+        .top{
+            width: 980px;
+            height: 100px;
+            margin: 0 auto;/*居中*/
+        }
+        .top .logo{
+            width: 250px;
+            height: 100px;
+            background-color: pink;
+            float: left;
+        }
+        .top .langue{
+            width: 150px;
+            height: 50px;
+            background-color: cornflowerblue;
+            float: right;
+        }
+        .top .nav{
+            width: 650px;
+            height: 50px;
+            background-color: indigo;
+            float: right;
 
+        }
+        .center{
+            width: 980px;
+            height: 400px;
+            margin: 0 auto;/*居中*/
+            margin-top: 10px;
+        }
+        .center .centerleft{
+            width: 320px;
+            height: 400px;
+            float: left;
+            background-color: #ffff00;
+        }
+        .center .centerright{
+            width: 650px;
+            height: 400px;
+            float: right;
+        }
+        .centerright .sub1{
+            width: 400px;
+            height: 350px;
+            float: left;
+        }
+        .centerright .sub2{
+            width: 240px;
+            height: 350px;
+            float: right;
+            background-color: greenyellow;
+        }
+        .centerright .sub3{
+            width: 650px;
+            height: 40px;
+            float: right;
+            background-color: #ffff00;
+            margin-top: 10px;
+        }
+        .sub1 .sub1top{
+            width: 400px;
+            height: 200px;
+            float: left;
+            background-color: mediumvioletred;
+        }
+        .sub1 .sub1botoom{
+            width: 400px;
+            height: 140px;
+            float: left;
+            background-color: deepskyblue;
+            margin-top: 10px;
+        }
+        .bottom{
+            width: 980px;
+            height: 50px;
+            background-color: cyan;
+            margin: 0 auto;/*居中*/
+            margin-top: 10px;
+        }
+
+    </style>
 </head>
 <body>
-    <a href="http://www.baidu.com" class="links">百度一下</a>
+
+<div class="top">
+    <div class="logo"></div>
+    <div class="langue"></div>
+    <div class="nav"></div>
+</div>
+
+<div class="center">
+    <div class="centerleft"></div>
+    <div class="centerright">
+        <div class="sub1">
+            <div class="sub1top">sub1</div>
+            <div class="sub1botoom" aligen="center">sub2dsdsdsds</div>
+        </div>
+        <div class="sub2">sub3</div>
+        <div class="sub3">sub4</div>
+    </div>
+</div>
+
+<div class="bottom">
+
+</div>
+
+
 </body>
 </html>
