@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>退还规则</title>
+    <style type="./tips.css"></style>
+</head>
+<body>
+<div class>
+    <header class="header ignore theme_bg">
+        <div class="header_left ignore" @click="goBack">
+            <x-icon type="ios-arrow-back" size="30" class="vux-x-icon-white"></x-icon>
+        </div>
+        <div class="header_title ignore">退还说明</div>
+    </header>
+    <div class="wrapper_box ignore instruction">
+        <div class="instruction_message">
+            <flexbox class="person_message">
+                <flexbox-item :span="1.2">
+                    <!-- <div class="person_photo"></div> -->
+                    <img :src="imgUrl" v-if="imgUrl" class="person_photo">
+                    <img src="@/assets/touxiang.png" alt="" v-else class="person_photo">
+                </flexbox-item>
+                <flexbox class="person_content" orient="vertical" align="flex-start">
+                    <flexbox>
+                        <span class="size_30">{{name}}</span>
+                        <div class="person_level">
+                            <flexbox align="center">
+                                <img src="@/assets/gathering_grade_icon.png" alt class="px_30">
+                                <span class="color_fff size_28">{{grade|getLevel}}{{gradeFloor|getLevelImg}}</span>
+                            </flexbox>
+                        </div>
+                    </flexbox>
+                    <div class="size_28 referral_code">推荐码:&nbsp;{{inviteCode}}</div>
+                </flexbox>
+            </flexbox>
+            <div class="data_message">
+                <group-title class="plan_type_bg_6">保证金:¥{{998|tofixed}}</group-title>
+                <grid :cols="2" :show-lr-borders="false">
+                    <grid-item>
+                        <div class="grid-center color_yellowish size_28">完成业绩已退金额</div>
+                        <div class="grid-center color_yellowish size_40">¥{{275|tofixed}}</div>
+                    </grid-item>
+                    <grid-item>
+                        <div class="grid-center color_yellowish size_28">未完成业绩已退金额</div>
+                        <div class="grid-center color_yellowish size_40">¥{{723|tofixed}}</div>
+                    </grid-item>
+                </grid>
+            </div>
+        </div>
+        <div class="instruction_record">
+            <div class="record_title size_28">
+                <img src="@/assets/jilu_icon.png" alt class="px_36">
+                业绩退还记录
+            </div>
+            <div class="record_item">
+                <group-title class="plan_type_bg_8">
+                    <flexbox justify="space-between">
+                        <div class="title-left">信用卡业绩&nbsp;1000</div>
+                        <div class="title-right">退还日期:&nbsp;2019年01月01日</div>
+                    </flexbox>
+                </group-title>
+                <grid :cols="3" :show-lr-borders="false" :show-vertical-dividers="false">
+                    <grid-item>
+                        <div class="grid-center color_000 size_24">可退总计</div>
+                        <div class="grid-center color_yellowish size_28">249.5元</div>
+                    </grid-item>
+                    <grid-item>
+                        <div class="grid-center color_000 size_24">已退还</div>
+                        <div class="grid-center color_yellowish size_28">25元</div>
+                    </grid-item>
+                    <grid-item>
+                        <div class="grid-center color_000 size_24">可退剩余</div>
+                        <div class="grid-center color_yellowish size_28">224.5元</div>
+                    </grid-item>
+                </grid>
+                <img src="@/assets/icon_symb.png" alt="" class="record_symb">
+            </div>
+            <div class="record_item">
+                <group-title class="plan_type_bg_8">
+                    <flexbox justify="space-between">
+                        <div class="title-left">贷款业绩&nbsp;2000</div>
+                        <div class="title-right">退还日期:&nbsp;2019年01月01日</div>
+                    </flexbox>
+                </group-title>
+                <grid :cols="3" :show-lr-borders="false" :show-vertical-dividers="false">
+                    <grid-item>
+                        <div class="grid-center color_000 size_24">可退总计</div>
+                        <div class="grid-center color_yellowish size_28">249.5元</div>
+                    </grid-item>
+                    <grid-item>
+                        <div class="grid-center color_000 size_24">已退还</div>
+                        <div class="grid-center color_yellowish size_28">50元</div>
+                    </grid-item>
+                    <grid-item>
+                        <div class="grid-center color_000 size_24">可退剩余</div>
+                        <div class="grid-center color_yellowish size_28">199.5元</div>
+                    </grid-item>
+                </grid>
+                <img src="@/assets/icon_symb.png" alt="" class="record_symb">
+            </div>
+
+            <div class="record_item">
+                <group-title class="plan_type_bg_8">
+                    <flexbox justify="space-between">
+                        <div class="title-left">智能还款业绩&nbsp;4000</div>
+                        <div class="title-right">退还日期:&nbsp;2019年01月01日</div>
+                    </flexbox>
+                </group-title>
+                <grid :cols="3" :show-lr-borders="false" :show-vertical-dividers="false">
+                    <grid-item>
+                        <div class="grid-center color_000 size_24">可退总计</div>
+                        <div class="grid-center color_yellowish size_28">249.5元</div>
+                    </grid-item>
+                    <grid-item>
+                        <div class="grid-center color_000 size_24">已退还</div>
+                        <div class="grid-center color_yellowish size_28">80元</div>
+                    </grid-item>
+                    <grid-item>
+                        <div class="grid-center color_000 size_24">可退剩余</div>
+                        <div class="grid-center color_yellowish size_28">169.5元</div>
+                    </grid-item>
+                </grid>
+                <img src="@/assets/icon_symb.png" alt="" class="record_symb">
+            </div>
+
+            <div class="record_item">
+                <group-title class="plan_type_bg_8">
+                    <flexbox justify="space-between">
+                        <div class="title-left">在线收款业绩&nbsp;6000</div>
+                        <div class="title-right">退还日期:&nbsp;2019年01月01日</div>
+                    </flexbox>
+                </group-title>
+                <grid :cols="3" :show-lr-borders="false" :show-vertical-dividers="false">
+                    <grid-item>
+                        <div class="grid-center color_000 size_24">可退总计</div>
+                        <div class="grid-center color_yellowish size_28">249.5元</div>
+                    </grid-item>
+                    <grid-item>
+                        <div class="grid-center color_000 size_24">已退还</div>
+                        <div class="grid-center color_yellowish size_28">120元</div>
+                    </grid-item>
+                    <grid-item>
+                        <div class="grid-center color_000 size_24">可退剩余</div>
+                        <div class="grid-center color_yellowish size_28">169.5元</div>
+                    </grid-item>
+                </grid>
+                <img src="@/assets/icon_symb.png" alt="" class="record_symb">
+            </div>
+
+            <div class="record_footer size_24">
+                <span class="size_font">退还说明:</span>用户通过平台APP办理推广业务,
+                每月达到考核标准后保证金自动退还到平台账号余额,相当于免费使用平台业务权限
+            </div>
+        </div>
+    </div>
+
+    <div class="dialog dialog_bg ignore" v-show="dialogShow">
+        <div class="dialog_content ignore">
+            <div class="dialog_top">
+                <div class="dialog_close">
+                    <img src="@/assets/btn_close_icon.png" class="px_28" alt @click="dialogShow=false">
+                </div>
+                <flexbox class="dialog-title" justify="center">
+                    <!-- <flexbox-item><img src="@assets/icon_wenxin1.png" alt=""></flexbox-item> -->
+                    <img src="@/assets/icon_wenxin1.png" alt>
+                    <span class="title_center size_32">平台保证金退还规则</span>
+                    <img src="@/assets/icon_wenxin2.png" alt>
+                </flexbox>
+            </div>
+            <div class="dialog_middle">
+                <div class="middle_item size_22 color_333">
+                    本平台集合信用卡、贷款、保险等金融业务的综合性便民服务平台。
+                    通过一个APP全程搞定您身边多样化的金融需求，打造了资源整合大平台，
+                    真正实现便民服务!现平台相当于免费VIP会员制度，
+                    缴纳相应保证金即可开通后台业务使用权限，自用省钱，
+                    推广业务赚取高额佣金，同时保证金可通过完成业绩后按照业绩比例进行无期限退还，
+                    直到退完为止!真正实现无成本VIP会员，无成本使用权限，
+                    承诺最终做到人人都能免费使用，人人都能免费VIP会员的综合金融便民服务平台!
+                </div>
+                <div class="middle_item">
+                    <div class="item_title size_22 color_333">
+                        <span class="item_sign"></span>业绩奖励退还比例说明:
+                    </div>
+                    <div class="item_content size_22 color_666">
+                        平台将每次信用卡个人佣金的
+                        <span class="color_yellowish">2.5%</span>，
+                        贷款个人佣金的
+                        <span class="color_goldren">2.5%</span>，
+                        智能还款个人佣金的
+                        <span class="color_yellowish">2%</span>，
+                        在线收款个人佣金的千
+                        <span class="color_yellowish">0.2%</span>，
+                        作为业绩奖励退还保证金。个人总业绩佣金乘以
+                        <span class="color_yellowish">该业务业绩退还比例</span>等于奖励退还金额。
+                    </div>
+                </div>
+                <div class="middle_item">
+                    <div class="item_title size_22 color_333">
+                        <span class="item_sign"></span>举例:
+                    </div>
+                    <div class="item_content size_22 color_666">
+                        张三的
+                        <span class="color_yellowish">信用卡</span>个人业绩佣金是10000，信用卡部分奖励返还则为：10000 x 2.5%=250；
+                    </div>
+                    <div class="item_content size_22 color_666">
+                        张三的
+                        <span class="color_yellowish">贷款</span>个人业绩佣金是10000，贷款部分奖励返还则为：10000 x 2.5%=250；
+                    </div>
+                    <div class="item_content size_22 color_666">
+                        张三的
+                        <span class="color_yellowish">智能还款</span>个人业绩佣金是10000，车险部分奖励返还则为：10000 x 2%=200；
+                    </div>
+                    <div class="item_content size_22 color_666">
+                        张三的
+                        <span class="color_yellowish">在线收款</span>个人业绩佣金是10000,代还部分奖励返还则为：10000x 0.2%=20；
+                    </div>
+                </div>
+                <div class="middle_item size_22 color_yellowish">
+                    <span class="item_sign"></span>注:每月1日为业绩奖励返还提现日，系统自动结算。
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
